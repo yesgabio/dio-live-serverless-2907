@@ -1,12 +1,12 @@
 service: dio-live-project
 
-frameworkVersion: '2'
+frameworkVersion: '3.26.0'
 
 
 provider:
   name: aws
   runtime: nodejs14.x
-  lambdaHashingVersion: '20201221'
+
   region: us-east-1
   iam:
       role:
@@ -18,7 +18,8 @@ provider:
                 - dynamodb:GetItem
                 - dynamodb:Scan
               Resource:
-                - arn:aws:dynamodb:us-east-1:167880115321:table/ItemTable
+                - arn:aws:dynamodb:us-east-1:428238595104:table/Table
+
                 
 functions:
   hello:

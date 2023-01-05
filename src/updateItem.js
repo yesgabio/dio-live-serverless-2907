@@ -4,8 +4,8 @@ const AWS = require("aws-sdk")
 
 const updateItem = async (event) => {
 
-  const {itemStatus} = JSON.parse(event.body);
-  const {id} = event.pathParameters
+  const {itemStatus} = JSON.parse(event.body); //o que vai ser atualizado
+  const {id} = event.pathParameters //o identificador que vai ser atualizado
 
   const dynamodb = new AWS.DynamoDB.DocumentClient();
 

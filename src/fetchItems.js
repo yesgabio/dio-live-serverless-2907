@@ -7,9 +7,9 @@ const fetchItems = async (event) => {
     const dynamodb = new AWS.DynamoDB.DocumentClient();
 
     let items;
-
+    // listar os resultados dos itens
     try {
-        const results = await dynamodb.scan({
+        const results = await dynamodb.scan({ //cuidar o scan com o tamanho da tabela
             TableName: "ItemTable"
         }).promise();
 
@@ -24,7 +24,7 @@ const fetchItems = async (event) => {
         body: JSON.stringify(items),
     };
 };
-
+//exportação da função
 module.exports = {
     handler: fetchItems,
 };

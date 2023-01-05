@@ -6,7 +6,7 @@ const fetchItem = async (event) => {
 
     const dynamodb = new AWS.DynamoDB.DocumentClient();
 
-    const {id} = event.pathParameters
+    const {id} = event.pathParameters //pegar uma varável que vem do evento
 
     let item;
 
@@ -14,7 +14,7 @@ const fetchItem = async (event) => {
         const result = await dynamodb.get({
             TableName: "ItemTable",
             Key: {id}
-        }).promise();
+        }).promise(); //passando dois parâmetros e usando o id como chave
 
         item = result.Item;
 
